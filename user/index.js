@@ -1,8 +1,11 @@
 import express from 'express';
+import { config } from 'dotenv';
+import { connectDB } from './src/database/reposetry/connection.js';
 const port=8003;
 const app=express();
-
 app.use(express.json());
+config()
+connectDB()
 
 app.use('/',(req,res,next)=>
 {
